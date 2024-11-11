@@ -14,8 +14,8 @@ const registerSchema = Schema({
         required: true,
     },
     eventid: {
-        type: Schema.Types.ObjectId, // Change this to ObjectId
-        ref: "events", // Reference to the events model
+        type: Schema.Types.ObjectId, 
+        ref: "events", 
         required: true,
     },
 });

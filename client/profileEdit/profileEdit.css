@@ -38,12 +38,12 @@ input[type="text"] {
 }
 
 textarea {
-  resize: none; /* Prevent resizing */
+  resize: none;
 }
 
 img#previewImage {
-  width: 100%; /* Make the preview image responsive */
-  height: auto; /* Maintain aspect ratio */
+  width: 100%;
+  height: auto;
   border-radius: 5px;
   margin-bottom: 20px;
 }
@@ -54,7 +54,7 @@ img#previewImage {
 }
 
 button {
-  width: 48%; /* Adjust button width to fit within button group */
+  width: 48%;
   padding: 10px 20px;
   border-radius: 5px;
   font-size: 16px;

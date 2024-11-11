@@ -98,7 +98,7 @@ input {
 
 .password-container input {
     width: 100%;
-    padding-right: 40px; /* Make space for the eye icon */
+    padding-right: 40px;
 }
 
 .password-container i {
@@ -147,5 +147,5 @@ button {
     color: red;
     font-size: 12px;
     margin-top: 5px;
-    display: none; /* Hidden by default */
+    display: none;
 }

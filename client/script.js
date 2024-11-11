@@ -1,4 +1,3 @@
-// add hovered class to selected list item
 let list = document.querySelectorAll(".navigation li");
 
 function activeLink() {
@@ -10,7 +9,6 @@ function activeLink() {
 
 list.forEach((item) => item.addEventListener("mouseover", activeLink));
 
-// Menu Toggle
 let toggle = document.querySelector(".toggle");
 let navigation = document.querySelector(".navigation");
 let main = document.querySelector(".main");
@@ -24,8 +22,8 @@ function confirmSignOut() {
   const a = confirm("Are you sure you want to sign out?");
   console.log(a);
   if (a) {
-    localStorage.removeItem("token"); // Remove the JWT token
-    window.location.href = "/client/login"; // Redirect to login page
+    localStorage.removeItem("token"); 
+    window.location.href = "/client/login";
   } else {
     window.location.href = "";
     console.log("signout cancelled.");

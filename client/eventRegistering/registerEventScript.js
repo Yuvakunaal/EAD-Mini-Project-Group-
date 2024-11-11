@@ -1,13 +1,13 @@
-let eventId; // Declare eventId in a broader scope
+let eventId;
 
 document.addEventListener("DOMContentLoaded", () => {
   const params = new URLSearchParams(window.location.search);
-  eventId = params.get("id"); // Assign the value to the outer variable
+  eventId = params.get("id");
   const backButton = document.getElementById("navigate-back");
   if (eventId) {
     backButton.href = `../moredetails/?id=${eventId}`;
   } else {
-    backButton.href = "../events/"; // Fallback to events page
+    backButton.href = "../events/";
   }
 });
 
@@ -25,7 +25,7 @@ document
     let name = "";
     if (token) {
       try {
-        const decodedToken = jwt_decode(token); // Ensure jwt_decode is included
+        const decodedToken = jwt_decode(token);
         name = decodedToken.username;
       } catch (error) {
         alert("Invalid token. Please log in again.");
@@ -38,7 +38,6 @@ document
       return;
     }
 
-    // Check if the user is already registered for this event
     try {
       const registrationCheckResponse = await fetch(
         `http://localhost:3000/check-registration?eventId=${eventId}&username=${name}`
@@ -54,19 +53,19 @@ document
 
       if (registrationCheckData.isRegistered) {
         alert("You are already registered for this event.");
-        return; // Stop further execution
+        return;
       }
     } catch (error) {
       console.error("Error checking registration:", error);
       alert("There was an error checking your registration status.");
-      return; // Stop further execution
+      return;
     }
 
     const registrationData = {
       username: name,
       role: userType,
       phno: contactNumber,
-      eventid: eventId, // Use the outer eventId
+      eventid: eventId,
     };
 
     try {

@@ -37,7 +37,7 @@ const eventSchema = new Schema({
         type : String,
     }],
     participants: [{
-        type: String, // Array to store usernames of participants
+        type: String,
     }],
 });
 

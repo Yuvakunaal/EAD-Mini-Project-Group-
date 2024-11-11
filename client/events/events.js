@@ -1,13 +1,13 @@
 document.addEventListener("DOMContentLoaded", async () => {
   const cardsContainer = document.querySelector(".cards");
-  const searchInput = document.querySelector(".search input"); // Select the search bar input
+  const searchInput = document.querySelector(".search input");
   const token = localStorage.getItem("token");
   let adminUsername = "";
-  let allEvents = []; // Store all events for filtering purposes
+  let allEvents = [];
 
   if (token) {
     const decodedToken = jwt_decode(token);
-    adminUsername = decodedToken.username; // Extract the admin username
+    adminUsername = decodedToken.username;
     console.log("Admin Username: ", adminUsername);
   }
 
@@ -15,10 +15,10 @@ document.addEventListener("DOMContentLoaded", async () => {
     const response = await fetch("http://localhost:3000/events/get-all");
     const data = await response.json();
 
-    console.log("Fetched Events: ", data); // Log the fetched events
+    console.log("Fetched Events: ", data);
 
     if (data.success) {
-      allEvents = data.events; // Store events in allEvents array
+      allEvents = data.events;
       displayEvents(allEvents);
 
       // Add filter event listeners
@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         option.addEventListener("click", (e) => {
           e.preventDefault();
           const filterText = option.textContent.trim();
-          console.log("Selected Filter: ", filterText); // Log the selected filter
+          console.log("Selected Filter: ", filterText);
           filterEvents(allEvents, filterText);
         });
       });
@@ -37,14 +37,13 @@ document.addEventListener("DOMContentLoaded", async () => {
     console.error("Error fetching events:", error);
   }
 
-  // Listen for search input changes
   searchInput.addEventListener("input", () => {
     const query = searchInput.value.trim().toLowerCase();
     searchEvents(query, allEvents);
   });
 
   function displayEvents(events) {
-    cardsContainer.innerHTML = ""; // Clear existing cards
+    cardsContainer.innerHTML = "";
 
     if (events.length === 0) {
       const noEventsMessage = document.createElement("div");
@@ -61,7 +60,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   function searchEvents(query, events) {
     if (!query) {
-      displayEvents(events); // Show all events if no query
+      displayEvents(events);
       return;
     }
 
@@ -125,10 +124,10 @@ document.addEventListener("DOMContentLoaded", async () => {
         );
         break;
       default:
-        filteredEvents = events; // No filter applied
+        filteredEvents = events;
     }
 
-    console.log("Filtered Events: ", filteredEvents); // Log the filtered events
+    console.log("Filtered Events: ", filteredEvents);
     displayEvents(filteredEvents);
   }
 

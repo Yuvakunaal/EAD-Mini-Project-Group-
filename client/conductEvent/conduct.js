@@ -4,11 +4,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
   eventform.addEventListener("submit", async (e) => {
     e.preventDefault();
-
-    // Validate event dates before proceeding
     if (!validateEventDates()) {
       alert(reason);
-      return; // If validation fails, stop form submission
+      return;
     }
 
     const eventname = document.getElementById("name").value;
@@ -26,7 +24,7 @@ document.addEventListener("DOMContentLoaded", () => {
       adminusername = decodedToken.username;
     } else {
       alert("You must be logged in to create an event.");
-      window.location.href = "../events"; // Redirect to events page
+      window.location.href = "../events";
       return;
     }
 
@@ -52,7 +50,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const data = await res.json();
       if (data.success) {
         alert("Event successfully created!");
-        window.location.href = "../events"; // Redirect to events page
+        window.location.href = "../events";
       } else {
         alert("Failed to create event: " + data.message);
       }
@@ -69,25 +67,25 @@ function validateEventDates() {
   const startTime = new Date(startTimeInput.value);
   const endTime = new Date(endTimeInput.value);
   const currentTime = new Date();
-  const oneHourFromNow = new Date(currentTime.getTime() + 60 * 60 * 1000); // Current time + 1 hour
-  const thirtyMinutesFromNow = new Date(currentTime.getTime() + 30 * 60 * 1000); // Current time + 30 minutes
+  const oneHourFromNow = new Date(currentTime.getTime() + 60 * 60 * 1000);
+  const thirtyMinutesFromNow = new Date(currentTime.getTime() + 30 * 60 * 1000);
 
   if (startTime < oneHourFromNow) {
     reason = 'Event start time must be at least 1 hour from now.';
-    return false; // Prevent form submission
+    return false; 
   }
 
   // Ensure end time is at least 30 minutes after start time
-  const minimumEndTime = new Date(startTime.getTime() + 30 * 60 * 1000); // Start time + 30 minutes
+  const minimumEndTime = new Date(startTime.getTime() + 30 * 60 * 1000);
   if (endTime < minimumEndTime) {
     reason = 'Event end time must be at least 30 minutes after the start time.';
-    return false; // Prevent form submission
+    return false;
   }
 
   if (startTime >= endTime) {
     reason = 'Event start time must be before the end time.';
-    return false; // Prevent form submission
+    return false;
   }
 
-  return true; // Allow form submission
+  return true;
 }

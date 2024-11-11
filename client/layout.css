@@ -1,7 +1,7 @@
-/* =========== Google Fonts ============ */
+
 @import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap");
 
-/* =============== Globals ============== */
+
 * {
   font-family: "Ubuntu", sans-serif;
   margin: 0;
@@ -27,7 +27,7 @@ body {
   width: 100%;
 }
 
-/* =============== Navigation ================ */
+
 .navigation {
   position: fixed;
   width: 200px;
@@ -106,7 +106,7 @@ body {
   white-space: nowrap;
 }
 
-/* --------- curve outside ---------- */
+
 .navigation ul li:hover a::before,
 .navigation ul li.hovered a::before {
   content: "";
@@ -155,7 +155,7 @@ body {
   }
 }
 
-/* ===================== Main ===================== */
+
 .main {
   position: absolute;
   width: calc(100% - 200px);
@@ -240,23 +240,8 @@ body {
 }
 
 
-/* ====================== Responsive Design ========================== */
-/* @media (max-width: 991px) {
-  .navigation {
-    left: -200px;
-  }
-  .navigation.active {
-    width: 200px;
-    left: 0;
-  }
-  .main {
-    width: 100%;
-    left: 0;
-  }
-  .main.active {
-    left: 200px;
-  }
-} */
+
+
 
 @media (max-width: 768px) {
   .navigation {

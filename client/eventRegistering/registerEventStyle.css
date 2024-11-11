@@ -14,7 +14,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh; /* Full height of the viewport */
+    height: 100vh;
 }
 
 .container {
@@ -22,13 +22,13 @@ body {
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    width: 500px; /* Fixed width for the form */
+    width: 500px;
     text-align: center;
 }
 
 h2 {
     margin-bottom: 20px;
-    color: #292c6d; /* Main color for the heading */
+    color: #292c6d;
 }
 
 .radio-group {
@@ -64,7 +64,7 @@ h2 {
 
 button {
     width: 100%;
-    background-color: #292c6d; /* Main color for the button */
+    background-color: #292c6d;
     color: #fff;
     padding: 10px;
     border: none;
@@ -74,7 +74,7 @@ button {
 }
 
 button:hover {
-    background-color: #0d74f3; /* Accent color for button hover */
+    background-color: #0d74f3;
 }
 
 a{

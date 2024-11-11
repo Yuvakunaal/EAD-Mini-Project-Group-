@@ -4,20 +4,19 @@ body {
     align-items: center;
     min-height: 100vh;
     margin: 0;
-    background: linear-gradient(to right, #6a11cb, #2575fc); /* Cool gradient background */
+    background: linear-gradient(to right, #6a11cb, #2575fc);
     font-family: Arial, sans-serif;
 }
 
-
 .form-container {
     overflow-y: scroll;
-    background: rgba(255, 255, 255, 0.9); /* Semi-transparent white background */
+    background: rgba(255, 255, 255, 0.9);
     border-radius: 10px;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     padding: 20px;
-    width: 400px; /* Set a width for the form container */
-    max-height: 90vh; /* Max height to avoid overflowing out of viewport */
-    overflow-y: auto; /* Scroll if the content overflows */
+    width: 400px;
+    max-height: 90vh;
+    overflow-y: auto;
 }
 
 
@@ -44,7 +43,7 @@ body {
 }
 
 #eventForm textarea {
-    resize: none; /* Prevent textarea resizing */
+    resize: none;
 }
 
 #eventForm button {
@@ -55,9 +54,9 @@ body {
     cursor: pointer;
     border-radius: 5px;
     font-size: 1rem;
-    transition: background-color 0.3s; /* Transition for hover effect */
+    transition: background-color 0.3s;
 }
 
 #eventForm button:hover {
-    background-color: darkblue; /* Darken on hover */
+    background-color: darkblue;
 }

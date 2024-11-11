@@ -14,24 +14,21 @@ document.addEventListener("DOMContentLoaded", async () => {
     const result = await response.json();
 
     if (result.success) {
-      const user = result.data; // Access the user data here
-      console.log("User data:", user); // Log the user data for debugging
+      const user = result.data;
+      console.log("User data:", user);
 
       document.getElementById("userName").textContent = user.username;
       document.getElementById("emailText").textContent = user.email;
       document.getElementById("dateJoinedText").textContent = new Date(
         user.dateJoined
-      ).toLocaleDateString(); // Format date
+      ).toLocaleDateString();
       document.getElementById("userBio").textContent = user.bio ||  "No bio provided";
 
-      // Update interests
-      // Check the correct field name here
       document.getElementById("userInterests").textContent =
         user.interests || "No interests available";
 
       document.getElementById("profileImage").src = user.profilePicture;
 
-      // Populate Event Activity table
       const eventTable = document.getElementById("eventTable");
       user.eventActivity.forEach((activity) => {
         const row = document.createElement("tr");

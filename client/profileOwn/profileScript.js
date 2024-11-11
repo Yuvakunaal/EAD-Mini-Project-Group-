@@ -1,10 +1,8 @@
-// JavaScript to run when the DOM is fully loaded
 document.addEventListener("DOMContentLoaded", async () => {
   const token = localStorage.getItem("token");
 
   if (token) {
     try {
-      // Decode the token to get the username
       const decodedToken = jwt_decode(token);
       const response = await fetch(
         `http://localhost:3000/userProfile/${decodedToken.username}`,
@@ -16,7 +14,6 @@ document.addEventListener("DOMContentLoaded", async () => {
       const data = await response.json();
 
       if (data.success) {
-        // Update the HTML with user data from the server
         document.getElementById("userName").innerText = data.data.username;
         document.getElementById("emailText").innerText = data.data.email;
         document.getElementById("userBio").innerText =
@@ -24,7 +21,6 @@ document.addEventListener("DOMContentLoaded", async () => {
         document.getElementById("userInterests").innerText =
           data.data.interests || "No interests available";
 
-        // Set profile image source with fallback
         const profilePicture =
           data.data.profilePicture || "path/to/default-image.jpg";
         document.getElementById("UserProfilePicture").src = profilePicture;
@@ -34,7 +30,6 @@ document.addEventListener("DOMContentLoaded", async () => {
           "dateJoined"
         ).innerText = `Date Joined: ${datejoin.toLocaleDateString()}`;
 
-        // Populate Event Activity table
         const eventTable = document.getElementById("eventTable");
         data.data.eventActivity.forEach((activity) => {
           const row = document.createElement("tr");

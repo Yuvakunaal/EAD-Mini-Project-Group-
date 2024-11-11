@@ -1,17 +1,14 @@
 import issueModel from "../models/issues.js";
 
-// Function to handle issue submission
 export const postIssue = async (req, res) => {
     const { username, issue } = req.body;
 
     try {
-        // Create a new issue entry
         const newIssue = new issueModel({
             username,
             issue,
         });
 
-        // Save to database
         await newIssue.save();
 
         res.status(200).json({ success: true, message: "Issue submitted successfully!" });

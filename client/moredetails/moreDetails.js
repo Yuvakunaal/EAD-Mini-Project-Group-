@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", async () => {
   const params = new URLSearchParams(window.location.search);
-  const eventId = params.get("id"); // Get event ID from URL
+  const eventId = params.get("id");
 
   if (!eventId) {
     alert("Event ID not found.");
@@ -39,7 +39,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
       if (token) {
         try {
-          const decodedToken = jwt_decode(token); // Ensure jwt_decode is included
+          const decodedToken = jwt_decode(token);
           username = decodedToken.username;
 
           // Check registration status
@@ -56,34 +56,29 @@ document.addEventListener("DOMContentLoaded", async () => {
           const registrationCheckData = await registrationCheckResponse.json();
 
           if (registrationCheckData.isRegistered) {
-            // User is already registered
             const registerButton = document.getElementById("registerButton");
-            registerButton.disabled = true; // Disable the button
-            registerButton.innerText = "Already Registered"; // Change button text
+            registerButton.disabled = true;
+            registerButton.innerText = "Already Registered";
           } else {
-            // Admin cannot register for their own event
             if (username === data.event.adminusername) {
               const registerButton = document.getElementById("registerButton");
-              registerButton.disabled = true; // Disable the button
-              registerButton.innerText = "Admin Cannot Register"; // Change button text
+              registerButton.disabled = true;
+              registerButton.innerText = "Admin Cannot Register";
             } else {
-              // Registration time logic
               const currentTime = new Date();
               const eventStartTime = new Date(data.event.datetimeStart);
 
-              // Check if the current time is within 5 minutes before the start time
               const fiveMinutesBeforeStart = new Date(
                 eventStartTime.getTime() - 5 * 60 * 1000
               );
 
-              // Disable the button if the current time is between start and end time or too close to start
               const registerButton = document.getElementById("registerButton");
               if (
                 currentTime >= eventStartTime ||
                 currentTime >= fiveMinutesBeforeStart
               ) {
-                registerButton.disabled = true; // Disable the registration button
-                registerButton.innerText = "Registration time completed"; // Change button text
+                registerButton.disabled = true;
+                registerButton.innerText = "Registration time completed";
               }
             }
           }

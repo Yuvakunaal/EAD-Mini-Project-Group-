@@ -7,7 +7,7 @@ signup.addEventListener("submit", async (e) => {
   e.preventDefault();
 
   const username = document.getElementById("username").value.trim();
-  const email = document.getElementById("emailid").value.trim(); // Get the email input value
+  const email = document.getElementById("emailid").value.trim(); 
   const password = document.getElementById("password").value;
   const confirmPassword = document.getElementById("confirmPassword").value;
 
@@ -24,7 +24,6 @@ signup.addEventListener("submit", async (e) => {
   usernameError.style.display = "none";
   emailError.style.display = "none";
 
-  // Validate username length
   if (username.length < 5 || username.length > 15) {
     usernameError.textContent = "Username must be between 5 and 15 characters.";
     usernameError.style.display = "block";

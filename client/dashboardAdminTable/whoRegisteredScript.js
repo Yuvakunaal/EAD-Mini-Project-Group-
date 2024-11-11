@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   
         if (result.success) {
             const tableBody = document.querySelector("tbody");
-            tableBody.innerHTML = ""; // Clear previous entries
+            tableBody.innerHTML = "";
 
             result.data.forEach((user, index) => {
                 const row = document.createElement("tr");
@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
                 const nameCell = document.createElement("td");
                 const profileLink = document.createElement("a");
-                profileLink.href = `../profileView/?username=${user.username}`; // Correctly linking to profile
+                profileLink.href = `../profileView/?username=${user.username}`; 
                 profileLink.textContent = user.username;
                 nameCell.appendChild(profileLink);
 
@@ -33,7 +33,7 @@ document.addEventListener("DOMContentLoaded", async () => {
                 row.appendChild(snoCell);
                 row.appendChild(nameCell);
                 row.appendChild(roleCell);
-                tableBody.appendChild(row); // Append the row to the table
+                tableBody.appendChild(row);
             });
         } else {
             console.error("Failed to fetch registered users:", result.message);

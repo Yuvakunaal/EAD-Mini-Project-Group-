@@ -118,7 +118,7 @@ h1 {
 }
 .back-button {
   display: block;
-  text-align: left; /* Move the button to the left */
+  text-align: left;
   margin-top: 10px;
 }
 

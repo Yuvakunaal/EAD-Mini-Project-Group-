@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const chatBody = document.getElementById("chatBody");
     const userInput = document.getElementById("userInput");
     const sendButton = document.getElementById("sendButton");
-    let currentStep = 0; // Track the current step in the conversation
+    let currentStep = 0;
 
     function appendMessage(text, className) {
         const message = document.createElement("div");

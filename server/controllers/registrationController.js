@@ -1,5 +1,5 @@
 import registerModel from "../models/registrations.js";
-import eventModel from "../models/events.js"; // Ensure this import is present
+import eventModel from "../models/events.js"; 
 import jwt from "jsonwebtoken";
 import dotenv from "dotenv";
 dotenv.config();
@@ -8,16 +8,13 @@ export const registerEvent = async (req, res) => {
   try {
     const { username, role, phno, eventid } = req.body;
 
-    // Log received registration data
     console.log("Registration Data:", req.body);
 
-    // Find the event by ID
     const event = await eventModel.findById(eventid);
     if (!event) {
       return res.status(404).json({ success: false, message: "Event not found." });
     }
 
-    // Check role and update accordingly
     if (role === "participant") {
       if (event.participants.includes(username)) {
         return res.status(400).json({ success: false, message: "Already registered as participant." });
@@ -32,10 +29,8 @@ export const registerEvent = async (req, res) => {
       return res.status(400).json({ success: false, message: "Invalid role." });
     }
 
-    // Save the updated event
     await event.save();
 
-    // Save registration in registrations collection
     const registration = new registerModel({ username, role, phno, eventid });
     await registration.save();
 

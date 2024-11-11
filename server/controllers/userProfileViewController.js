@@ -5,7 +5,6 @@ export const getUserProfile = async (req, res) => {
   const { username } = req.params;
 
   try {
-    // Fetch user details based on the username
     const user = await userModel.findOne({ username });
     if (!user) {
       return res
@@ -13,26 +12,23 @@ export const getUserProfile = async (req, res) => {
         .json({ success: false, message: "User not found" });
     }
 
-    // Fetch events the user is registered for, along with their roles
     const eventActivities = await registerModel
       .find({ username })
       .populate("eventid", "eventname");
 
-    // Map the fetched event activities to the desired format
     const eventActivity = eventActivities.map((activity) => ({
       eventName: activity.eventid.eventname,
       role: activity.role,
     }));
 
-    // Prepare and send the response with user data and event activity
     res.status(200).json({
       success: true,
       data: {
         username: user.username,
         email: user.email,
         dateJoined: user.datejoined,
-        bio: user.bio || "", // Ensure this matches the schema
-        interests: user.interest || "", // Ensure this matches the schema
+        bio: user.bio || "",
+        interests: user.interest || "",
         profilePicture: user.profilePicture,
         eventActivity,
       },

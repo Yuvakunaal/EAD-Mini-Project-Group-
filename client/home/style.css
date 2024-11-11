@@ -87,45 +87,45 @@ svg:nth-child(3):hover {
 }
 
 .carousel-container {
-  width: 80%; /* Set a fixed width for the container */
-  max-width: 1200px; /* Maximum width to ensure it doesn't get too wide */
-  margin: 0 auto; /* Center the container horizontally */
+  width: 80%;
+  max-width: 1200px;
+  margin: 0 auto;
   overflow: hidden;
   position: relative;
   margin-bottom: 20px;
 }
 
 .carousel {
-  display: flex; /* Use flex for horizontal scrolling */
+  display: flex;
   transition: transform 0.5s ease-in-out;
-  width: 100%; /* Ensure the carousel takes up the full width */
+  width: 100%;
 }
 
 .carousel-item {
-  flex: 0 0 100%; /* Ensure each item takes up the full width of the container */
+  flex: 0 0 100%;
   box-sizing: border-box;
   padding: 20px;
   text-align: center;
-  font-size: 1.2em; /* Adjust font size for better fit */
+  font-size: 1.2em;
   background-color: #c3c2c2;
   color: #333;
   border: 1px solid #ddd;
-  margin: 0 10px; /* Reduced margin */
+  margin: 0 10px;
   border-radius: 8px;
-  word-wrap: break-word; /* Ensure long text wraps */
-  overflow: hidden; /* Hide overflow */
-  text-overflow: ellipsis; /* Add ellipsis for overflowing text */
-  height: auto; /* Adjust height based on content */
+  word-wrap: break-word;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  height: auto;
 }
 
 .carousel-item span {
   display: inline-block;
-  white-space: normal; /* Allow text to wrap within each item */
+  white-space: normal;
 }
 
 @media (max-width: 480px) {
   .carousel-item {
-    width: 90%; /* Adjust for smaller screens */
+    width: 90%;
   }
 }
 

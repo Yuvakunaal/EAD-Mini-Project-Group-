@@ -1,14 +1,14 @@
 import userModel from "../models/users.js";
 
 export const updateProfile = async (req, res) => {
-  const { bio, interest, profilePicture } = req.body; // Ensure you're getting the correct fields
-  const username = req.user.username; // Assuming you're getting the username from the authenticated token
+  const { bio, interest, profilePicture } = req.body;
+  const username = req.user.username;
 
   try {
     const user = await userModel.findOneAndUpdate(
       { username },
-      { bio, interest, profilePicture }, // Ensure you're updating the correct fields
-      { new: true } // This option returns the updated document
+      { bio, interest, profilePicture }, 
+      { new: true } 
     );
 
     if (!user) {
