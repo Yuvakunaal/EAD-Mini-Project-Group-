@@ -1,0 +1,63 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background: linear-gradient(to right, #6a11cb, #2575fc); /* Cool gradient background */
+    font-family: Arial, sans-serif;
+}
+
+
+.form-container {
+    overflow-y: scroll;
+    background: rgba(255, 255, 255, 0.9); /* Semi-transparent white background */
+    border-radius: 10px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    padding: 20px;
+    width: 400px; /* Set a width for the form container */
+    max-height: 90vh; /* Max height to avoid overflowing out of viewport */
+    overflow-y: auto; /* Scroll if the content overflows */
+}
+
+
+#eventForm {
+    display: flex;
+    flex-direction: column;
+}
+
+#eventForm label {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+#eventForm input,
+#eventForm select,
+#eventForm textarea {
+    margin-bottom: 15px;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+#eventForm textarea {
+    resize: none; /* Prevent textarea resizing */
+}
+
+#eventForm button {
+    padding: 10px;
+    background-color: dodgerblue;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: background-color 0.3s; /* Transition for hover effect */
+}
+
+#eventForm button:hover {
+    background-color: darkblue; /* Darken on hover */
+}

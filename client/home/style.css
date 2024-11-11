@@ -1,0 +1,150 @@
+.main {
+  background: linear-gradient(to right, #d3cce3, #e9e4f0);
+}
+.heading {
+  text-align: center;
+  padding: 30px;
+}
+
+.description {
+  padding: 0px 50px;
+  font-size: large;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+
+.heading2 {
+  display: inline-block;
+  padding: 30px;
+  width: 49%;
+}
+
+.new {
+  background-color: antiquewhite;
+}
+
+.ongoing {
+  background-color: aquamarine;
+}
+
+.edone {
+  margin-left: 10px;
+  display: inline-block;
+  width: 49%;
+  height: 300px;
+  border: 0.5px solid black;
+  border-radius: 3px;
+}
+
+.card1 {
+  width: 80%;
+  height: 500px;
+  margin: 3em auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background: linear-gradient(to right, #020344, #28b8d5);
+  border-radius: 16px;
+  color: white;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.card1-top {
+  width: 100%;
+}
+
+svg {
+  padding: 6px;
+}
+
+svg:nth-child(1):hover {
+  fill: rgba(255, 0, 68, 0.738);
+}
+
+svg:nth-child(2):hover {
+  fill: rgb(126, 126, 126);
+}
+
+svg:nth-child(3):hover {
+  fill: rgb(68, 5, 255);
+}
+
+.headtitle {
+  font-size: 3rem;
+}
+
+.headsubtitle {
+  color: rgb(204, 203, 203);
+  font-size: 1rem;
+}
+
+.card1-bottom {
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+.carousel-container {
+  width: 80%; /* Set a fixed width for the container */
+  max-width: 1200px; /* Maximum width to ensure it doesn't get too wide */
+  margin: 0 auto; /* Center the container horizontally */
+  overflow: hidden;
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.carousel {
+  display: flex; /* Use flex for horizontal scrolling */
+  transition: transform 0.5s ease-in-out;
+  width: 100%; /* Ensure the carousel takes up the full width */
+}
+
+.carousel-item {
+  flex: 0 0 100%; /* Ensure each item takes up the full width of the container */
+  box-sizing: border-box;
+  padding: 20px;
+  text-align: center;
+  font-size: 1.2em; /* Adjust font size for better fit */
+  background-color: #c3c2c2;
+  color: #333;
+  border: 1px solid #ddd;
+  margin: 0 10px; /* Reduced margin */
+  border-radius: 8px;
+  word-wrap: break-word; /* Ensure long text wraps */
+  overflow: hidden; /* Hide overflow */
+  text-overflow: ellipsis; /* Add ellipsis for overflowing text */
+  height: auto; /* Adjust height based on content */
+}
+
+.carousel-item span {
+  display: inline-block;
+  white-space: normal; /* Allow text to wrap within each item */
+}
+
+@media (max-width: 480px) {
+  .carousel-item {
+    width: 90%; /* Adjust for smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .card1 {
+    flex-direction: column;
+  }
+  .card1-top {
+    margin-top: 50%;
+  }
+  .card1-bottom {
+    width: 100%;
+    align-items: end;
+    flex-direction: row;
+  }
+  .headtitle {
+    font-size: 2rem;
+  }
+  svg {
+    fill: rgba(255, 255, 255, 0.738);
+  }
+}

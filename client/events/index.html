@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Events</title>
+    <link rel="icon" href="../website_logo.ico" type="image/x-icon" />
+    <!-- ======= Styles ====== -->
+    <link rel="stylesheet" href="../layout.css" />
+    <link rel="stylesheet" href="style2.css" />
+  </head>
+
+  <body>
+    <!-- =============== Navigation ================ -->
+    <div class="container">
+      <div class="navigation">
+        <ul>
+          <li>
+            <a href="../home/">
+              <span class="icon">
+                <img
+                  src="../website_logo.ico"
+                  class="custom-icon"
+                  height="40px"
+                  width="40px"
+                />
+              </span>
+              <span class="title">EventSpark</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="../home/">
+              <span class="icon">
+                <ion-icon name="home-outline"></ion-icon>
+              </span>
+              <span class="title">Home</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="../types/">
+              <span class="icon">
+                <ion-icon name="ellipsis-vertical-outline"></ion-icon>
+              </span>
+              <span class="title">Types</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="../events/">
+              <span class="icon">
+                <ion-icon name="calendar-outline"></ion-icon>
+              </span>
+              <span class="title">Events</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="../dashboard/">
+              <span class="icon">
+                <ion-icon name="cellular-outline"></ion-icon>
+              </span>
+              <span class="title">Dashboard</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="../help/">
+              <span class="icon">
+                <ion-icon name="help-outline"></ion-icon>
+              </span>
+              <span class="title">Help</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="#" onclick="return confirmSignOut();">
+              <span class="icon">
+                <ion-icon name="log-out-outline"></ion-icon>
+              </span>
+              <span class="title">Sign Out</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- ========================= Main ==================== -->
+      <div class="main">
+        <div class="topbar">
+          <div class="toggle">
+            <ion-icon name="menu-outline"></ion-icon>
+          </div>
+          <div class="search">
+            <label>
+              <input type="text" placeholder="Search here" />
+              <ion-icon name="search-outline"></ion-icon>
+            </label>
+          </div>
+          <div class="user" onclick="showProfile()">
+            <img
+              src="https://thumbs.dreamstime.com/b/man-profile-cartoon-smiling-vector-illustration-graphic-design-135443492.jpg"
+              alt=""
+            />
+          </div>
+        </div>
+        <div class="btn-filter">
+          <div class="createBtn">
+            <a href="../conductEvent/">
+              <button style="--clr: #39ff14">
+                <span>Conduct</span><i></i>
+              </button>
+            </a>
+          </div>
+          <div>
+            <details class="dropdown">
+              <summary role="button">
+                <a class="button">Filter</a>
+              </summary>
+              <ul>
+                <li class="filter-option">
+                  <a href="#" data-filter="admin">You as admin</a>
+                </li>
+                <li class="filter-option">
+                  <a href="#" data-filter="organizer">You as organizer</a>
+                </li>
+                <li class="filter-option">
+                  <a href="#" data-filter="participant">You as participant</a>
+                </li>
+                <li class="filter-option">
+                  <a href="#" data-filter="completed">Completed Events</a>
+                </li>
+                <li class="filter-option">
+                  <a href="#" data-filter="active">Active Events</a>
+                </li>
+                <li class="filter-option">
+                  <a href="#" data-filter="upcoming">Upcoming Events</a>
+                </li>
+                <li class="filter-option">
+                  <a href="#" data-filter="az">A - Z</a>
+                </li>
+                <li class="filter-option">
+                  <a href="#" data-filter="za">Z - A</a>
+                </li>
+              </ul>
+            </details>
+          </div>
+        </div>
+        <div class="cards">
+          <!-- card-containers will be created in JS -->
+        </div>
+      </div>
+    </div>
+
+    <!-- =========== Scripts =========  -->
+    <script src="https://cdn.jsdelivr.net/npm/jwt-decode/build/jwt-decode.js"></script>
+    <script src="../script.js"></script>
+    <script src="events.js"></script>
+    <!-- ====== ionicons ======= -->
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
+  </body>
+</html>

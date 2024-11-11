@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Your Profile</title>
+    <link rel="icon" href="../website_logo.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="profileStyle.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <div class="back-button">
+          <a href="../home/index.html">Go Back to Home</a>
+        </div>
+        <div class="edit-confirm">
+          <div class="edit-button">
+            <button onclick="window.location.href='../profileEdit/index.html'">
+              Edit Profile
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="profile-section">
+        <img
+          id="UserProfilePicture"
+          class="profile-image"
+          src=""
+          alt="User Profile Image"
+        />
+        <div class="profile-details">
+          <h2 id="userName"></h2>
+          <p id="userEmail" contenteditable="false">
+            Email: <span id="emailText"></span>
+          </p>
+          <p id="dateJoined"></p>
+        </div>
+      </div>
+      <div class="section">
+        <h3>Profile Summary</h3>
+        <p><b>Bio</b>: <span id="userBio" contenteditable="false"></span></p>
+        <p>
+          <b>Interests</b>:
+          <span id="userInterests" contenteditable="false"></span>
+        </p>
+      </div>
+      <div class="section">
+        <h3>Event Activity</h3>
+        <table id="eventTable">
+          <tr>
+            <th>Event Name</th>
+            <th>Role</th>
+          </tr>
+        </table>
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/jwt-decode/build/jwt-decode.min.js"></script>
+    <script src="profileScript.js"></script>
+  </body>
+</html>

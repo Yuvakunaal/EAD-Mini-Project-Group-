@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
+    <link rel="icon" href="../website_logo.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="signupStyle.css">
+</head>
+<body>
+    <div class="background">
+        <div class="shape"></div>
+        <div class="shape"></div>
+    </div>
+    <form method="POST" id="signupForm">
+        <h3>Sign Up Here</h3>
+
+        <label for="username">Username</label>
+        <input type="text" placeholder="Username" id="username" required>
+        <span id="usernameError" class="error-message" style="color: red; display: none;"></span> 
+
+        <label for="emailid">Email ID</label>
+        <input type="text" placeholder="Email-id" id="emailid" required>
+        <span id="emailidError" class="error-message" style="color: red; display: none;"></span> 
+        
+        <label for="password">Set Password</label>
+        <div class="password-container">
+            <input type="password" placeholder="Password" id="password" required>
+            <i class="fas fa-eye" id="togglePassword"></i>
+        </div>
+
+        <label for="confirmPassword">Re-enter Password
+            <i id="matchIcon" class="fas fa-check" style="color: green; display: none;"></i>
+            <i id="mismatchIcon" class="fas fa-times" style="color: red; display: none;"></i>
+        </label>
+        <div class="password-container">
+            <input type="password" placeholder="Confirm Password" id="confirmPassword" required>
+            <i class="fas fa-eye" id="toggleConfirmPassword"></i>
+        </div>
+
+        <span id="passwordError" class="error-message" style="color: red; display: none;"></span> 
+        <button type="submit">Sign Up</button>
+        <div class='social'>
+            <button class='log-in' id="login">
+                Log In
+            </button>
+        </div>
+    </form>
+    <script src="signupScript.js"></script>
+</body>
+</html>

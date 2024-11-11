@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" href="website_logo.ico" type="image/x-icon" />
+    <!-- Link to Google Fonts -->
+    <title>Virtual Event Platform</title>
+    <style>
+      html {
+        height: 100%;
+      }
+
+      body {
+        margin: 0;
+        font-family: "Poppins", sans-serif;
+      }
+
+      .bg {
+        animation: slide 3s ease-in-out infinite alternate;
+        background-image: linear-gradient(-60deg, #6c3 50%, #09f 50%);
+        bottom: 0;
+        left: -50%;
+        opacity: 0.5;
+        position: fixed;
+        right: -50%;
+        top: 0;
+        z-index: -1;
+      }
+
+      .bg2 {
+        animation-direction: alternate-reverse;
+        animation-duration: 4s;
+      }
+
+      .bg3 {
+        animation-duration: 5s;
+      }
+
+      .content {
+        background-color: transparent;
+        border-radius: 0.25em;
+        box-sizing: border-box;
+        left: 50%;
+        padding: 10vmin;
+        position: fixed;
+        text-align: center;
+        top: 50%;
+        transform: translate(-50%, -50%);
+      }
+
+      h1 {
+        font-family: "Poppins", sans-serif;
+        font-size: 3rem;
+
+        margin: 0; /* Remove default margin */
+        background: linear-gradient(
+          270deg,
+          #733381,
+          #652d72,
+          #592763,
+          #4c2255,
+          #3f1c47,
+          #331639,
+          #26112b,
+          #190b1c,
+          #0d060e,
+          #000000
+        );
+        -webkit-background-clip: text; /* For Safari */
+        background-clip: text;
+        color: transparent; /* Make text transparent to show gradient */
+        display: inline-block; /* Needed for background-clip to work properly */
+      }
+
+      @keyframes slide {
+        0% {
+          transform: translateX(-25%);
+        }
+        100% {
+          transform: translateX(25%);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="bg"></div>
+    <div class="bg bg2"></div>
+    <div class="bg bg3"></div>
+    <div class="content">
+      <h1>Welcome to EventSpark</h1>
+      <p>---- Tap anywhere to login ----</p>
+    </div>
+
+    <script>
+      // Redirect to the login page when the user clicks anywhere on the screen
+      document.addEventListener("click", function () {
+        window.location.href = "login/";
+      });
+    </script>
+  </body>
+</html>

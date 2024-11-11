@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Edit Profile</title>
+    <link rel="icon" href="../website_logo.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="profileEdit.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h2>Edit Your Profile</h2>
+      
+      <label for="bio">Bio:</label>
+      <input type="text" id="bio" placeholder="Enter your bio" />
+
+      <label for="interests">Interests:</label>
+      <input type="text" id="interests" placeholder="Enter your interests" />
+
+      <label for="profilePicture">Profile Picture URL:</label>
+      <input type="text" id="profilePicture" placeholder="Profile Picture URL" />
+
+      <button id="saveChanges">Save Changes</button>
+      <button onclick="window.history.back()">Go Back</button>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/jwt-decode/build/jwt-decode.min.js"></script>
+    <script src="profileEdit.js"></script>
+  </body>
+</html>

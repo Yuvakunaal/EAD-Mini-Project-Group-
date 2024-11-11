@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration</title>
+    <link rel="icon" href="../website_logo.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="registerEventStyle.css">
+</head>
+<body>
+    <div class="container">
+        <a href="#" id="navigate-back">
+            <img width="50" height="50" src="https://img.icons8.com/ios-filled/50/long-arrow-left.png" alt="long-arrow-left"/>
+        </a>
+        <h2>Select Registration Role</h2>
+        <form id="registrationForm" action="../events/">
+            <div class="radio-group">
+                <label>
+                    <input type="radio" name="userType" value="participant" required>
+                    Participant
+                </label>
+                <label>
+                    <input type="radio" name="userType" value="organizer" required>
+                    Organizer
+                </label>
+            </div>
+            <div class="input-group">
+                <label for="contactNumber">Contact Number</label>
+                <input type="tel" id="contactNumber" placeholder="Enter your contact number" required pattern="[0-9]*" minlength="10" maxlength="10">
+            </div>
+            
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/jwt-decode/build/jwt-decode.js"></script>
+    <script src="registerEventScript.js"></script>
+</body>
+</html>

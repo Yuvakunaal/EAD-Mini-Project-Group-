@@ -1,0 +1,119 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #0093E9;
+    background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);
+    color: #333;
+    line-height: 1.6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full height */
+}
+.header{
+    display: flex;
+    justify-content: space-between;
+}
+.event-details {
+    max-width: 1200px;
+    width: 90%; /* Responsive width */
+    margin: 20px auto;
+    padding: 30px;
+    border-radius: 12px;
+    background: #ece9f6; /* White background */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+    max-height: 80vh; /* Limit the height */
+    overflow-y: auto; /*Enable vertical scrolling */
+}
+
+.event-details h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #013873; /* Or any color you prefer */
+    text-align: center; /* Center the heading */
+}
+
+.event-details:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+}
+
+
+.event-details h2 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    color: #007bff; /* Bright blue */
+    text-align: center; /* Center title */
+}
+
+.event-details p {
+    margin-bottom: 15px;
+    font-size: 1.1em;
+    line-height: 1.8;
+}
+
+.event-details p strong {
+    color: #004ea0; /* Highlighted text */
+}
+
+.event-details .description {
+    margin-top: 20px;
+    font-size: 1em;
+    color: #555;
+}
+
+#registerButton {
+    display: inline-block;
+    padding: 12px 25px;
+    margin-top: 20px;
+    font-size: 1.1em;
+    color: #fff;
+    background-color: #28a745; /* Green */
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    text-align: center; /* Center text */
+    width: 100%; /* Full width */
+}
+
+#registerButton:hover {
+    background-color: #218838; /* Darker green */
+    transform: scale(1.05);
+}
+
+#registerButton:disabled {
+    background-color: grey; /* Grey background when disabled */
+    color: #ffffff; /* White text */
+    cursor: not-allowed; /* Not-allowed cursor */
+}
+
+.back{
+
+}
+
+@media (max-width: 600px) {
+    .event-details {
+        padding: 20px;
+    }
+
+    .event-details h2 {
+        font-size: 2em;
+    }
+
+    #registerButton {
+        width: 100%;
+        padding: 12px;
+    }
+
+    .back-button a {
+        width: 100%;
+        text-align: center;
+    }
+}

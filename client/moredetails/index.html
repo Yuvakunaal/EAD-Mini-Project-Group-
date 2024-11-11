@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Event Details</title>
+    <link rel="icon" href="../website_logo.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="moreDetails.css" />
+    <!-- Add your styles here -->
+  </head>
+  <body>
+    <div class="event-details">
+      <div class="header">
+        <a href="../events/" class="back">
+          <img
+            width="50"
+            height="50"
+            src="https://img.icons8.com/ios-filled/50/long-arrow-left.png"
+            alt="long-arrow-left"
+          />
+        </a>
+        <h1>Event Details</h1>
+        <h1></h1>
+      </div>
+      <p><strong>Event Name:</strong> <span id="eventName"></span></p>
+      <p><strong>Host:</strong> <span id="hostName"></span></p>
+      <p><strong>Type:</strong> <span id="eventType"></span></p>
+      <p><strong>Date:</strong> <span id="eventDate"></span></p>
+      <p><strong>Time:</strong> <span id="eventTime"></span></p>
+      <div class="description">
+        <p><strong>Description:</strong></p>
+        <p id="eventDescription"></p>
+      </div>
+      <a href="#" id="registerLink">
+        <button id="registerButton">Register Now</button>
+      </a>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/jwt-decode/build/jwt-decode.js"></script>
+    <script src="moreDetails.js"></script>
+  </body>
+</html>

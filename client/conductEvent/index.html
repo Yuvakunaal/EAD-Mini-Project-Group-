@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="conduct.css" />
+    <link rel="icon" href="../website_logo.ico" type="image/x-icon" />
+    <title>Create Event</title>
+  </head>
+  <body>
+    <div class="form-container">
+      <form method="POST" id="eventForm" onsubmit="return validateEventDates()">
+        <a href="../events/">
+          <img
+            width="50"
+            height="50"
+            src="https://img.icons8.com/ios-filled/50/long-arrow-left.png"
+            alt="long-arrow-left"
+          />
+        </a>
+        <h1 align="center">Fill the details</h1>
+        <br />
+        <label for="name">Event Name (Upto 18 letters):</label>
+        <input type="text" id="name" name="name" maxlength="18" required />
+        <br /><br />
+
+        <!-- Poster Upload -->
+        <label for="poster">Event Poster link (from Google):</label>
+        <input type="url" id="poster" name="poster" required />
+        <br /><br />
+
+        <!-- Event Type Dropdown -->
+        <label for="event-type">Type:</label>
+        <select id="event-type" name="type" required>
+          <option value="webinar">Webinar</option>
+          <option value="conference">Conference</option>
+          <option value="workshop">Workshop</option>
+          <option value="network-event">Network Event</option>
+        </select>
+        <br /><br />
+
+        <!-- DateTime Inputs -->
+        <label for="time">DateTime:</label>
+        <input
+          type="datetime-local"
+          id="start-time"
+          name="start-time"
+          required
+        />
+        <p align="center">To</p>
+        <input type="datetime-local" id="end-time" name="end-time" required />
+        <br /><br />
+
+        <!-- Description Textarea -->
+        <label for="description">Description:</label>
+        <textarea
+          id="description"
+          name="description"
+          rows="5"
+          cols="40"
+          placeholder="Describe the event..."
+          required
+        ></textarea>
+        <br /><br />
+
+        <!-- Submit Button -->
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/jwt-decode/build/jwt-decode.js"></script>
+    <script src="conduct.js"></script>
+  </body>
+</html>

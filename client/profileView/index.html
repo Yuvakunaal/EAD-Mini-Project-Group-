@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>View Profile</title>
+    <link rel="icon" href="../website_logo.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="profileViewStyle.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <div class="back-button">
+          <a href="#" onclick="window.history.back(); return false;">Go Back</a>
+        </div>
+      </div>
+      <div class="profile-section">
+        <img
+          id="profileImage"
+          class="profile-image"
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTbS14PlALbMsXWXw9exTvzfInGER7xEgtS0Q&s"
+          alt="User Profile Image"
+        />
+        <div class="profile-details">
+          <h2 id="userName"></h2>
+          <p id="userEmail">Email: <span id="emailText"></span></p>
+          <p id="dateJoined">Date Joined: <span id="dateJoinedText"></span></p>
+        </div>
+      </div>
+      <div class="section">
+        <h3>Profile Summary</h3>
+        <p><b>Bio</b>: <span id="userBio"></span></p>
+        <p><b>Interests</b>: <span id="userInterests"></span></p>
+      </div>
+      <div class="section">
+        <h3>Event Activity</h3>
+        <table id="eventTable">
+          <tr>
+            <th>Event Name</th>
+            <th>Role</th>
+          </tr>
+        </table>
+      </div>
+    </div>
+    <script src="profileViewScript.js"></script>
+  </body>
+</html>
